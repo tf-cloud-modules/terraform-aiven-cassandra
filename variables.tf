@@ -61,3 +61,33 @@ variable "termination_protection" {
   type        = bool
   default     = false
 }
+
+variable "ip_filter" {
+  description = "IP filter."
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+}
+
+variable "cassandra_version" {
+  description = "Cassandra major version."
+  type        = string
+  default     = "4"
+}
+
+variable "migrate_sstableloader" {
+  description = "Migration mode for the sstableloader utility."
+  type        = string
+  default     = ""
+}
+
+variable "project_to_fork_from" {
+  description = "Name of another project to fork a service from."
+  type        = string
+  default     = ""
+}
+
+variable "service_to_fork_from" {
+  description = "Name of another service to fork from."
+  type        = string
+  default     = ""
+}
