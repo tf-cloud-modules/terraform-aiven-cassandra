@@ -11,5 +11,5 @@ This document describes the current status of this project.
 | ✔ | [Add cassandra_user_config.private_access]() ||
 | ✔ | [Add cassandra_user_config.public_access]() ||
 | ❌ | [Add service_integrations]() ||
-| ❌ | [Add cassandra_user module]() ||
-| ❌ | [Add examples]() ||
+| ✔ | [Add cassandra_user module]() ||
+| ✔ | [Add examples]() ||
