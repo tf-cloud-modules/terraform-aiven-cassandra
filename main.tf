@@ -16,8 +16,20 @@ resource "aiven_cassandra" "this" {
     migrate_sstableloader = var.migrate_sstableloader
     project_to_fork_from  = var.project_to_fork_from
     service_to_fork_from  = var.service_to_fork_from
-  }
 
+    cassandra {
+      batch_size_fail_threshold_in_kb = var.batch_size_fail_threshold_in_kb
+      batch_size_warn_threshold_in_kb = var.batch_size_warn_threshold_in_kb
+    }
+
+    public_access {
+      prometheus = var.public_access_prometheus
+    }
+
+    private_access {
+      prometheus = var.private_access_prometheus
+    }
+  }
 
   dynamic "tag" {
     for_each = var.tags

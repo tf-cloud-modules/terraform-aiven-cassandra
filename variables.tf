@@ -91,3 +91,27 @@ variable "service_to_fork_from" {
   type        = string
   default     = ""
 }
+
+variable "batch_size_fail_threshold_in_kb" {
+  description = "batch_size_fail_threshold_in_kb"
+  type        = string
+  default     = "640"
+}
+
+variable "batch_size_warn_threshold_in_kb" {
+  description = "batch_size_warn_threshold_in_kb"
+  type        = string
+  default     = "64"
+}
+
+variable "public_access_prometheus" {
+  description = "Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_prometheus" {
+  description = "Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses."
+  type        = bool
+  default     = false
+}
