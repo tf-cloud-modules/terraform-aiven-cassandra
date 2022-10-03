@@ -1,6 +1,6 @@
 module "cassandra" {
   source       = "../.."
-  project      = "tf-cloud-modules"
+  project      = var.project
   service_name = "test"
   tags = [
     {
@@ -12,7 +12,7 @@ module "cassandra" {
 
 module "cassandra_user" {
   source       = "../../modules/user"
-  project      = "tf-cloud-modules"
+  project      = module.cassandra.project
   service_name = module.cassandra.service_name
   username     = "test"
 }
