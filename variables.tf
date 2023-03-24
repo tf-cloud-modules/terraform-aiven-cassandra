@@ -77,19 +77,19 @@ variable "cassandra_version" {
 variable "migrate_sstableloader" {
   description = "Migration mode for the sstableloader utility."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "project_to_fork_from" {
   description = "Name of another project to fork a service from."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "service_to_fork_from" {
   description = "Name of another service to fork from."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "batch_size_fail_threshold_in_kb" {
