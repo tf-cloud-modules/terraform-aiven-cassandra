@@ -12,10 +12,17 @@ resource "aiven_cassandra" "this" {
 
   cassandra_user_config {
     cassandra_version     = var.cassandra_version
-    ip_filter             = var.ip_filter
     migrate_sstableloader = var.migrate_sstableloader
     project_to_fork_from  = var.project_to_fork_from
     service_to_fork_from  = var.service_to_fork_from
+
+    dynamic "ip_filter_object" {
+      for_each = var.ip_filter_object
+      content {
+        network     = lookup(ip_filter_object.value, "network")
+        description = lookup(ip_filter_object.value, "description", null)
+      }
+    }
 
     cassandra {
       batch_size_fail_threshold_in_kb = var.batch_size_fail_threshold_in_kb
