@@ -1,4 +1,8 @@
+**English** | [Русский](README.ru.md)
+
 # Aiven Cassandra Terraform module
+
+> **Deprecated.** Aiven for Apache Cassandra has reached end-of-life: new services cannot be created since November 30, 2025, and all existing services are powered off and deleted after December 31, 2025 ([Aiven EOL notice](https://aiven.io/docs/platform/reference/end-of-life)). The `aiven_cassandra` and `aiven_cassandra_user` resources were removed from the `aiven/aiven` provider in `4.56.0`, so this module is pinned to provider versions `>= 4.55.2, < 4.56.0` — the last line that still supports Cassandra. No further updates are planned.
 
 Terraform module which creates Aiven Cassandra resources
 
@@ -17,15 +21,15 @@ module "cassandra" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.55.2, < 4.56.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 3.5.1 |
+| ---- | ------- |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.55.2 |
 
 ## Modules
 
@@ -34,19 +38,19 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aiven_cassandra.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/cassandra) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_batch_size_fail_threshold_in_kb"></a> [batch\_size\_fail\_threshold\_in\_kb](#input\_batch\_size\_fail\_threshold\_in\_kb) | batch\_size\_fail\_threshold\_in\_kb | `string` | `"640"` | no |
 | <a name="input_batch_size_warn_threshold_in_kb"></a> [batch\_size\_warn\_threshold\_in\_kb](#input\_batch\_size\_warn\_threshold\_in\_kb) | batch\_size\_warn\_threshold\_in\_kb | `string` | `"64"` | no |
 | <a name="input_cassandra_version"></a> [cassandra\_version](#input\_cassandra\_version) | Cassandra major version. | `string` | `"4"` | no |
 | <a name="input_cloud_name"></a> [cloud\_name](#input\_cloud\_name) | Defines where the cloud provider and region where the service is hosted in. | `string` | `"aws-us-east-1"` | no |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
-| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br>  {<br>    "network": "0.0.0.0/0"<br>  }<br>]</pre> | no |
+| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br/>  {<br/>    "network": "0.0.0.0/0"<br/>  }<br/>]</pre> | no |
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |
 | <a name="input_migrate_sstableloader"></a> [migrate\_sstableloader](#input\_migrate\_sstableloader) | Migration mode for the sstableloader utility. | `string` | `null` | no |
@@ -66,7 +70,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_cassandra_user_config"></a> [cassandra\_user\_config](#output\_cassandra\_user\_config) | Cassandra user configurable settings. |
 | <a name="output_cloud_name"></a> [cloud\_name](#output\_cloud\_name) | Defines where the cloud provider and region where the service is hosted in. |
 | <a name="output_components"></a> [components](#output\_components) | Service component information objects. |

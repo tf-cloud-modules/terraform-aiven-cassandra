@@ -29,7 +29,7 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_cassandra"></a> [cassandra](#module\_cassandra) | ../.. | n/a |
 | <a name="module_cassandra_user"></a> [cassandra\_user](#module\_cassandra\_user) | ../../modules/user | n/a |
 
@@ -40,7 +40,7 @@ No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 
 ## Outputs
